@@ -6,7 +6,7 @@ const App = () => {
   const [seconds, setSeconds] = useState(0);
 
   useEffect(() => {
-    if (seconds === 0) {
+    if (seconds > 0) {
       setTimeout(() => setSeconds(seconds - 1), 1000);
     } else {
       setSeconds(0);
