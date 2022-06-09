@@ -4,7 +4,6 @@ import "../styles/App.css";
 const App = () => {
   // write your code here
   const [seconds, setSeconds] = useState(0);
-  // const [input, setInput] = useState(0);
 
   useEffect(() => {
     if (seconds === 0) {
@@ -13,21 +12,6 @@ const App = () => {
       setSeconds(0);
     }
   }, [seconds]);
-
-  // function handleKeyDown(e){
-  //   e.preventDefault();
-  //   if (e.keyCode === 13) { console.log('hit enter');
-  // };
-  // function handleChange(e) {
-  //   let inp = e.target.value;
-  //   if (isNaN(inp)) {
-  //     setInput(0);
-  //   } else {
-
-  //     setInput(inp);
-  //   }
-  //   // console.log(input);
-  // }
 
   return (
     <div className="wrapper">
