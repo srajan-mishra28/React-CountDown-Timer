@@ -7,10 +7,14 @@ const App = () => {
 
   useEffect(() => {
     if (seconds > 0) {
-      setTimeout(() => setSeconds(seconds - 1), 1000);
-    } else {
-      setSeconds(0);
+      var id = setTimeout(() => {
+        setSeconds(seconds - 1);
+        // console.log("Timer active");
+      }, 1000);
     }
+    return () => {
+      clearTimeout(id);
+    };
   }, [seconds]);
 
   return (
@@ -23,7 +27,7 @@ const App = () => {
             onKeyDown={(event) => {
               let inpVal = event.target.value;
               if (event.keyCode === 13) {
-                if (isNaN(inpVal)) {
+                if (isNaN(inpVal) || inpVal < 0) {
                   setSeconds(0);
                 } else {
                   setSeconds(Math.floor(inpVal));
